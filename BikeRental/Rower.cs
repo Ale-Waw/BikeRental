@@ -22,7 +22,12 @@ namespace BikeRental
 
         public void Wypozycz()
         {
-            if (czyWypozyczony) return;
+            if (czyWypozyczony)
+            {
+                Console.WriteLine("Ten rower jest już wypożyczony");
+                return;
+            }
+                 
             czyWypozyczony = true;
             dataWypozyczenia = DateTime.Now;
         }
