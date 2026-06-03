@@ -30,6 +30,8 @@ namespace BikeRental
                  
             czyWypozyczony = true;
             dataWypozyczenia = DateTime.Now;
+
+            Console.WriteLine("Wypożyczyłeś wskazany rower, miłej jazdy!");
         }
 
         public double Zwroc()
@@ -52,9 +54,10 @@ namespace BikeRental
         public override string ToString()
         {
             string status = czyWypozyczony ? $"[ZAJĘTY od {dataWypozyczenia:HH:mm}]" : "[WOLNY]";
-            return $"ID: {ID:D3} | {status} | {rodzaj} | {cenaGodz} zł/h";
+            return $"ID: {ID:D3} | {status,-10} | {rodzaj,-12} | {cenaGodz,5:F2} zł/h";
+            
         }
-
+    
     }
     public class Gorski : Rower
     {

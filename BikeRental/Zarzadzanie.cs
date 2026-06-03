@@ -8,8 +8,10 @@ namespace BikeRental
     {
         public static void PokazRowery(List<Rower> flota)
         {
-            Console.Clear();
-            Console.WriteLine("===SYSTEM WYPOŻYCZALNI ROWERÓW===");
+         //   Console.Clear();
+            Console.WriteLine("--------------------------------------------------------");
+            Console.WriteLine("          ===SYSTEM WYPOŻYCZALNI ROWERÓW===");
+            Console.WriteLine("--------------------------------------------------------");
             foreach (var rower in flota)
                 Console.WriteLine(rower);
         }
@@ -35,7 +37,7 @@ namespace BikeRental
             if (int.TryParse(Console.ReadLine(), out int id))
             {
                 var rower = flota.Find(r => r.ID == id);
-                if (rower != null && rower.czyWypozyczony)
+                if (rower != null && rower.czyWypozyczony && rower.dataWypozyczenia.HasValue)
                 {
                     DateTime start = rower.dataWypozyczenia.Value;
                     double koszt = rower.Zwroc();
