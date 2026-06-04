@@ -7,7 +7,7 @@ namespace BikeRental
     public class RekordHistorii
     {
         public int RowerID { get; set; }
-        public string Rodzaj { get; set; }
+        public string Rodzaj { get; set; } = "";
         public DateTime DataStart { get; set; }
         public DateTime DataKoniec { get; set; }
         public double Kwota { get; set; }
